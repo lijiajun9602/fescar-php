@@ -20,8 +20,12 @@ declare(strict_types=1);
 namespace Hyperf\Seata\Listener;
 
 
+use Hyperf\DbConnection\Db;
+use Hyperf\Event\Contract\ListenerInterface;
+use Hyperf\Framework\Event\MainWorkerStart;
 use Hyperf\Seata\Annotation\GlobalTransactionScanner;
 use Hyperf\Seata\Rm\DataSource\DataSourceProxy;
+use Hyperf\Server\Event\MainCoroutineServerStart;
 
 class InitListener implements ListenerInterface
 {
