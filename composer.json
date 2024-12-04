@@ -1,0 +1,71 @@
+{
+    "name": "lijiajun9602/seata",
+    "description": "Php Implementation For Seata.",
+    "license": "Apache-2.0",
+    "keywords": [
+        "php",
+        "hyperf",
+        "seata"
+    ],
+    "homepage": "https://seata.io",
+    "support": {
+        "docs": "https://seata.io/en-us/docs/overview/what-is-seata.html",
+        "issues": "https://github.com/seata/seata-php/issues",
+        "pull-request": "https://github.com/v/pulls",
+        "source": "https://github.com/seata/seata-php"
+    },
+    "require": {
+        "php": ">=8.0",
+        "hyperf/database": "~3.1.0",
+        "hyperf/db-connection": "~3.1.0",
+        "hyperf/server": "~3.1.0",
+        "antlr/antlr4-php-runtime": "~0.9.1",
+        "greenlion/php-sql-parser": "^4.4",
+        "hyperf/context": "~3.1.0",
+        "hyperf/utils": "*"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.0",
+        "mockery/mockery": "^1.0",
+        "phpstan/phpstan": "^0.12",
+        "phpunit/phpunit": ">=7.0",
+        "swoole/ide-helper": "dev-master",
+        "swow/swow": "dev-develop",
+        "symfony/var-dumper": "^5.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Hyperf\\Seata\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "HyperfTest\\Seata\\": "tests/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1.x-dev"
+        },
+        "hyperf": {
+            "config": "Hyperf\\Seata\\ConfigProvider"
+        }
+    },
+    "scripts": {
+        "test": [
+            "Composer\\Config::disableProcessTimeout",
+            "phpunit -c phpunit.xml --colors=always"
+        ],
+        "analyse": [
+            "Composer\\Config::disableProcessTimeout",
+            "phpstan analyse --memory-limit 5G -l 0 ./src"
+        ],
+        "cs-fix": "php-cs-fixer fix $1"
+    }
+}
