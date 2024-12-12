@@ -26,7 +26,7 @@ trait Strings
      */
     public function readString(int $length, int $offset = 0): string
     {
-        return $this->readUTF8String($length, $offset);
+        return  mb_convert_encoding($this->unpack("a{$length}", $offset), "ISO-8859-1", "UTF-8");
     }
 
     /**
@@ -34,7 +34,7 @@ trait Strings
      */
     public function readUTF8String(int $length, int $offset = 0): string
     {
-        return utf8_decode($this->unpack("a{$length}", $offset));
+        return  mb_convert_encoding($this->unpack("a{$length}", $offset), "ISO-8859-1", "UTF-8");
     }
 
     /**
@@ -74,7 +74,7 @@ trait Strings
      */
     public function putUTF8String(string $value, int $offset = 0): self
     {
-        $value = utf8_encode($value);
+        $value = mb_convert_encoding($value, "ISO-8859-1", "UTF-8");
         $length = strlen($value);
 
         return $this->pack("a{$length}", $value, $offset);
@@ -85,7 +85,7 @@ trait Strings
      */
     public function putCString(string $value, int $offset = 0): self
     {
-        $value = utf8_encode($value . ' ');
+        $value = mb_convert_encoding($value . ' ', "ISO-8859-1", "UTF-8");
         $length = strlen($value);
 
         return $this->pack("Z{$length}", $value, $offset);
