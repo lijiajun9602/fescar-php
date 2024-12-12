@@ -19,10 +19,10 @@ declare(strict_types=1);
  */
 namespace Hyperf\Database\Connectors;
 
-use Hyperf\Collection\Arr;
 use Hyperf\Database\Connection;
 use Hyperf\Database\ConnectionInterface;
 use Hyperf\Seata\Rm\DataSource\MysqlConnectionProxy;
+use Hyperf\Utils\Arr;
 use InvalidArgumentException;
 use PDOException;
 use Psr\Container\ContainerInterface;

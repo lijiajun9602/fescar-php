@@ -47,7 +47,7 @@ class GlobalTransactionScanner
 
     private string $txServiceGroup;
 
-    private int $mode;
+    private int $mode = self::DEFAULT_MODE;
 
     private bool $disableGlobalTransaction;
 

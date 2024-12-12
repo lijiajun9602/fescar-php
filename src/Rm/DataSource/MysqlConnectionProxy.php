@@ -40,7 +40,7 @@ use Hyperf\Seata\Rm\DataSource\Undo\SQLUndoLog;
 use Hyperf\Seata\Rm\DataSource\Undo\UndoLogManager;
 use Hyperf\Seata\Rm\DataSource\Undo\UndoLogManagerFactory;
 use Hyperf\Seata\Rm\DefaultResourceManager;
-use Hyperf\Context\ApplicationContext;;
+use Hyperf\Utils\ApplicationContext;
 use JetBrains\PhpStorm\Pure;
 
 // todo

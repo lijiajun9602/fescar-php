@@ -19,8 +19,7 @@ declare(strict_types=1);
  */
 namespace Hyperf\Rm\DataSource;
 
-
-use Hyperf\Database\Connection;
+use Hyperf\DbConnection\Connection;
 use Hyperf\Seata\Rm\DataSource\MysqlConnectionProxy;
 use Psr\Container\ContainerInterface;
 

@@ -19,7 +19,6 @@ declare(strict_types=1);
  */
 namespace Hyperf\Seata\Core\Rpc\Runtime\Swow;
 
-use Hyperf\Coroutine\Coroutine;
 use Hyperf\Engine\Channel;
 use Hyperf\Seata\Core\Protocol\MessageType;
 use Hyperf\Seata\Core\Protocol\RpcMessage;
@@ -30,7 +29,8 @@ use Hyperf\Seata\Core\Rpc\Runtime\V1\ProtocolV1Decoder;
 use Hyperf\Seata\Core\Rpc\Runtime\V1\ProtocolV1Encoder;
 use Hyperf\Seata\Utils\Buffer\ByteBuffer;
 use Hyperf\Seata\Utils\Protocol\RpcMessageUtils;
-use Hyperf\Context\ApplicationContext;;
+use Hyperf\Utils\ApplicationContext;
+use Hyperf\Utils\Coroutine;
 use Swow\Socket;
 
 class SocketChannel implements SocketChannelInterface
@@ -73,7 +73,7 @@ class SocketChannel implements SocketChannelInterface
     public function sendSyncWithoutResponse(RpcMessage $rpcMessage, int $timeoutMillis)
     {
         $data = $this->protocolEncoder->encode($rpcMessage);
-        $this->socket->send($data);
+        $this->socket->sendString($data);
     }
 
     public function getAddress(): Address

@@ -19,10 +19,10 @@ declare(strict_types=1);
  */
 namespace Hyperf\Seata\Core\Rpc\Runtime;
 
-use Hyperf\Coroutine\Coroutine;
 use Hyperf\Seata\Core\Protocol\MergedWarpMessage;
 use Hyperf\Seata\Exception\SeataException;
-use Hyperf\Context\ApplicationContext;;
+use Hyperf\Utils\ApplicationContext;
+use Hyperf\Utils\Coroutine;
 
 class MergedSendRunnable
 {

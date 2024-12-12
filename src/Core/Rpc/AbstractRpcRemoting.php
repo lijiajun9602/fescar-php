@@ -34,7 +34,7 @@ use Hyperf\Seata\Core\Rpc\Runtime\V1\ProtocolV1Decoder;
 use Hyperf\Seata\Core\Rpc\Runtime\V1\ProtocolV1Encoder;
 use Hyperf\Seata\Exception\SeataException;
 use Hyperf\Seata\Logger\LoggerFactory;
-use Hyperf\Context\ApplicationContext;;
+use Hyperf\Utils\ApplicationContext;
 use Psr\Container\ContainerInterface;
 use Psr\Log\LoggerInterface;
 

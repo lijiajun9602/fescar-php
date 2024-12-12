@@ -19,9 +19,9 @@ declare(strict_types=1);
  */
 namespace Hyperf\Seata\Rm\DataSource;
 
-use Hyperf\Context\Context;
 use Hyperf\Seata\Exception\ShouldNeverHappenException;
 use Hyperf\Seata\Rm\DataSource\Undo\SQLUndoLog;
+use Hyperf\Utils\Context;
 
 class ConnectionContext
 {

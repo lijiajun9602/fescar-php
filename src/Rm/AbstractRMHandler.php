@@ -38,7 +38,7 @@ use Hyperf\Seata\Core\Protocol\Transaction\UndoLogDeleteRequest;
 use Hyperf\Seata\Core\Rpc\RpcContext;
 use Hyperf\Seata\Core\Rpc\TransactionMessageHandler;
 use Hyperf\Seata\Exception\IllegalArgumentException;
-use Hyperf\Context\ApplicationContext;;
+use Hyperf\Utils\ApplicationContext;
 
 abstract class AbstractRMHandler extends AbstractExceptionHandler implements RMInboundHandler, TransactionMessageHandler
 {

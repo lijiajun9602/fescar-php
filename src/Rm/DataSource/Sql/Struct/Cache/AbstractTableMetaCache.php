@@ -25,7 +25,7 @@ use Hyperf\Seata\Logger\StdoutLogger;
 use Hyperf\Seata\Rm\DataSource\Sql\Struct\TableMeta;
 use Hyperf\Seata\Rm\DataSource\Sql\Struct\TableMetaCache;
 use Hyperf\Seata\Rm\PDOProxy;
-use Hyperf\Context\ApplicationContext;;
+use Hyperf\Utils\ApplicationContext;
 use JetBrains\PhpStorm\ArrayShape;
 
 abstract class AbstractTableMetaCache implements TableMetaCache

@@ -50,25 +50,25 @@ class PDOStatementProxy extends \PDOStatement
         return $this->__object->{$name}(...$arguments);
     }
 
-    public function bindParam(int|string $param, mixed &$var, int $type = PDO::PARAM_INT, int $maxLength = null, mixed $driverOptions = null): bool
+    public function bindParam(int|string $param, mixed &$var, int $type = PDO::PARAM_INT, int $maxLength = null, mixed $driverOptions = null)
     {
         $this->bindParamContext[$param] = [$var, $type, $maxLength, $driverOptions];
         return $this->__object->bindColumn($param, $param, $type, $maxLength, $driverOptions);
     }
 
-    public function bindColumn(int|string $column, mixed &$var, int $type = PDO::PARAM_INT, int $maxLength = null, mixed $driverOptions = null): bool
+    public function bindColumn(int|string $column, mixed &$var, int $type = PDO::PARAM_INT, int $maxLength = null, mixed $driverOptions = null)
     {
         $this->bindColumnContext[$column] = [$var, $type, $maxLength, $driverOptions];
         return $this->__object->bindColumn($column, $param, $type, $maxLength, $driverOptions);
     }
 
-    public function bindValue(int|string $param, mixed $value, int $type = PDO::PARAM_INT): bool
+    public function bindValue(int|string $param, mixed $value, int $type = PDO::PARAM_INT)
     {
         $this->bindValueContext[$param] = [$value, $type];
         return $this->__object->bindValue($param, $value, $type);
     }
 
-    public function execute(?array $params = null): bool
+    public function execute(?array $params = null)
     {
         if ($this->sqlParser->isDelete()) {
             $deleteExecutor = new DeleteExecutor($this->sqlParser, $this->PDOProxy, $this->bindParamContext, $this->bindColumnContext, $this->bindValueContext);

@@ -1,5 +1,5 @@
 {
-    "name": "lijiajun9602/seata",
+    "name": "seata/seata",
     "description": "Php Implementation For Seata.",
     "license": "Apache-2.0",
     "keywords": [
@@ -16,12 +16,9 @@
     },
     "require": {
         "php": ">=8.0",
-        "hyperf/database": "~3.1.0",
-        "hyperf/db-connection": "~3.1.0",
-        "hyperf/server": "~3.1.0",
-        "antlr/antlr4-php-runtime": "~0.9.1",
+        "antlr/antlr4-php-runtime": "^0.9.1",
         "greenlion/php-sql-parser": "^4.4",
-        "hyperf/context": "~3.1.0",
+        "hyperf/context": "v3.0.x-dev",
         "hyperf/utils": "*"
     },
     "require-dev": {

@@ -19,7 +19,6 @@ declare(strict_types=1);
  */
 namespace Hyperf\Seata\Core\Rpc\Runtime;
 
-use Hyperf\Coroutine\Coroutine;
 use Hyperf\Seata\Common\AddressTarget;
 use Hyperf\Seata\Common\Constants;
 use Hyperf\Seata\Core\Model\ResourceManagerInterface;
@@ -37,8 +36,8 @@ use Hyperf\Seata\Core\Rpc\Processor\Client\RmUndoLogProcessor;
 use Hyperf\Seata\Core\Rpc\TransactionMessageHandler;
 use Hyperf\Seata\Core\Rpc\TransactionRole;
 use Hyperf\Seata\Exception\TodoException;
-use Hyperf\Context\ApplicationContext;;
-
+use Hyperf\Utils\ApplicationContext;
+use Hyperf\Utils\Coroutine;
 
 class RmRemotingClient extends AbstractRemotingClient
 {
@@ -203,7 +202,9 @@ class RmRemotingClient extends AbstractRemotingClient
             while (true) {
                 try {
                     $response = $this->sendMsgWithResponse(HeartbeatMessage::ping(), AddressTarget::RM);
-                } catch (\InvalidArgumentException|\Throwable $exception) {
+                } catch (\InvalidArgumentException $exception) {
+//                    var_dump($exception->getMessage());
+                } catch (\Throwable $exception) {
 //                    var_dump($exception->getMessage());
                 }
                 sleep(5);

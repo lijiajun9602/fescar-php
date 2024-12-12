@@ -19,7 +19,6 @@ declare(strict_types=1);
  */
 namespace Hyperf\Seata\Rm\DataSource;
 
-use Hyperf\Context\ApplicationContext;
 use Hyperf\Seata\Common\AddressTarget;
 use Hyperf\Seata\Core\Context\RootContext;
 use Hyperf\Seata\Core\Model\BranchStatus;
@@ -39,6 +38,7 @@ use Hyperf\Seata\Logger\LoggerInterface;
 use Hyperf\Seata\Rm\AbstractResourceManager;
 use Hyperf\Seata\Rm\DataSource\Undo\UndoLogManagerFactory;
 use Hyperf\Seata\Rm\PDOProxy;
+use Hyperf\Utils\ApplicationContext;
 
 class DataSourceManager extends AbstractResourceManager implements Resource
 {
@@ -125,7 +125,7 @@ class DataSourceManager extends AbstractResourceManager implements Resource
         }
 
         try {
-            $this->undoLogManagerFactory->getUndoLogManager($dataSourceProxy->getResourceId())->undo($dataSourceProxy, $xid, $branchId);
+            $this->undoLogManagerFactory->getUndoLogManager($dataSourceProxy->getDriverName())->undo($dataSourceProxy, $xid, $branchId);
         } catch (TransactionException $exception) {
             $this->logger->info(sprintf(
                 'branchRollback failed. branchType:[%s], xid:[%s], branchId:[%s], resourceId:[%s], applicationData:[%s]. reason:[%s]',

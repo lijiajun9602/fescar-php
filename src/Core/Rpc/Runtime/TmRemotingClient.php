@@ -19,7 +19,6 @@ declare(strict_types=1);
  */
 namespace Hyperf\Seata\Core\Rpc\Runtime;
 
-use Hyperf\Coroutine\Coroutine;
 use Hyperf\Seata\Common\AddressTarget;
 use Hyperf\Seata\Core\Protocol\AbstractMessage;
 use Hyperf\Seata\Core\Protocol\HeartbeatMessage;
@@ -29,8 +28,9 @@ use Hyperf\Seata\Core\Protocol\RegisterTMRequest;
 use Hyperf\Seata\Core\Rpc\Address;
 use Hyperf\Seata\Core\Rpc\Processor\Client\ClientHeartbeatProcessor;
 use Hyperf\Seata\Core\Rpc\Processor\Client\ClientOnResponseProcessor;
+use Hyperf\Seata\Core\Rpc\response;
 use Hyperf\Seata\Core\Rpc\TransactionRole;
-
+use Hyperf\Utils\Coroutine;
 
 class TmRemotingClient extends AbstractRemotingClient
 {
@@ -126,7 +126,9 @@ class TmRemotingClient extends AbstractRemotingClient
             while (true) {
                 try {
                     $response = $this->sendMsgWithResponse(HeartbeatMessage::ping(), AddressTarget::TM);
-                } catch (\InvalidArgumentException|\Throwable $exception) {
+                } catch (\InvalidArgumentException $exception) {
+//                    var_dump($exception->getMessage());
+                } catch (\Throwable $exception) {
 //                    var_dump($exception->getMessage());
                 }
                 sleep(5);
