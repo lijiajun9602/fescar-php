@@ -262,7 +262,7 @@ class MysqlConnectionProxy extends Connection implements Resource, ConnectionPro
      *
      * @return \Hyperf\Database\Query\Grammars\MySqlGrammar
      */
-    protected function getDefaultQueryGrammar()
+    protected function getDefaultQueryGrammar(): QueryGrammar
     {
         return $this->withTablePrefix(new QueryGrammar());
     }
@@ -272,7 +272,7 @@ class MysqlConnectionProxy extends Connection implements Resource, ConnectionPro
      *
      * @return \Hyperf\Database\Schema\Grammars\MySqlGrammar
      */
-    protected function getDefaultSchemaGrammar()
+    protected function getDefaultSchemaGrammar(): SchemaGrammar
     {
         return $this->withTablePrefix(new SchemaGrammar());
     }
@@ -282,7 +282,7 @@ class MysqlConnectionProxy extends Connection implements Resource, ConnectionPro
      *
      * @return \Hyperf\Database\Query\Processors\MySqlProcessor
      */
-    protected function getDefaultPostProcessor()
+    protected function getDefaultPostProcessor():MySqlProcessor
     {
         return new MySqlProcessor();
     }
@@ -292,7 +292,7 @@ class MysqlConnectionProxy extends Connection implements Resource, ConnectionPro
      *
      * @return \Doctrine\DBAL\Driver\PDO\MySQL\Driver
      */
-    protected function getDoctrineDriver()
+    protected function getDoctrineDriver():MySqlDriver
     {
         return new MySqlDriver();
     }
