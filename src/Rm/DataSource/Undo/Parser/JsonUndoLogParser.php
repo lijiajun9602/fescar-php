@@ -21,7 +21,8 @@ namespace Hyperf\Seata\Rm\DataSource\Undo\Parser;
 
 use Hyperf\Seata\Rm\DataSource\Undo\BranchUndoLog;
 use Hyperf\Seata\Rm\DataSource\Undo\UndoLogParser;
-use Hyperf\Utils\Str;
+use Hyperf\Stringable\Str;
+
 
 class JsonUndoLogParser implements UndoLogParser
 {

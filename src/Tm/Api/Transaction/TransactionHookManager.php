@@ -19,7 +19,8 @@ declare(strict_types=1);
  */
 namespace Hyperf\Seata\Tm\Api\Transaction;
 
-use Hyperf\Utils\Context;
+
+use Hyperf\Context\Context;
 
 class TransactionHookManager
 {

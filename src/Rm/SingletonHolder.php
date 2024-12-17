@@ -19,7 +19,7 @@ declare(strict_types=1);
  */
 namespace Hyperf\Seata\Rm;
 
-use Hyperf\Utils\ApplicationContext;
+use Hyperf\Context\ApplicationContext;;
 
 class SingletonHolder
 {

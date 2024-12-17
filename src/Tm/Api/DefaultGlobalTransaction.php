@@ -28,7 +28,7 @@ use Hyperf\Seata\Core\Model\TransactionManager;
 use Hyperf\Seata\Exception\IllegalStateException;
 use Hyperf\Seata\Exception\TransactionException;
 use Hyperf\Seata\Tm\TransactionManagerHolder;
-use Hyperf\Utils\ApplicationContext;
+use Hyperf\Context\ApplicationContext;;
 use Throwable;
 
 class DefaultGlobalTransaction implements GlobalTransaction

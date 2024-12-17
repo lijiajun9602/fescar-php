@@ -18,7 +18,7 @@ declare(strict_types=1);
  *
  */
 return [
-    'application_id' => uniqid(),
+    'application_id' => uniqid('', true),
     'tx_service_group' => 'my_test_tx_group',
     // DEFAULT_MODE = GlobalTransactionScanner:AT_MOD + GlobalTransactionScanner::MT_MOD
     'mode' => 1 + 2,

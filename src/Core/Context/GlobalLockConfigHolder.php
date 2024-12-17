@@ -19,8 +19,8 @@ declare(strict_types=1);
  */
 namespace Hyperf\Seata\Core\Context;
 
+use Hyperf\Context\Context;
 use Hyperf\Seata\Core\Model\GlobalLockConfig;
-use Hyperf\Utils\Context;
 
 class GlobalLockConfigHolder
 {

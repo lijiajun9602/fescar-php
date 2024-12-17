@@ -35,7 +35,7 @@ use Hyperf\Seata\Rm\DataSource\Undo\SQLUndoLog;
 use Hyperf\Seata\Rm\DataSource\Undo\UndoLogManager;
 use Hyperf\Seata\Rm\DataSource\Undo\UndoLogManagerFactory;
 use Hyperf\Seata\SqlParser\SqlParserFactory;
-use Hyperf\Utils\ApplicationContext;
+use Hyperf\Context\ApplicationContext;;
 use JetBrains\PhpStorm\Pure;
 use RuntimeException;
 

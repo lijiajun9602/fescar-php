@@ -21,7 +21,7 @@ namespace Hyperf\Seata\Core\Protocol;
 
 use Hyperf\Seata\Exception\ExecutionException;
 use Hyperf\Seata\Exception\ShouldNeverHappenException;
-use Hyperf\Utils\Exception\TimeoutException;
+use Hyperf\Seata\Exception\TimeoutException;
 use RuntimeException;
 use Throwable;
 
@@ -62,7 +62,7 @@ class MessageFuture
             throw $result;
         }
         if ($result instanceof Throwable) {
-            throw new RuntimeException($result);
+            throw new RuntimeException($result->getMessage());
         }
         return $result;
     }

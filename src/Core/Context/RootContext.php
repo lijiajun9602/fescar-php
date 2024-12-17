@@ -19,12 +19,12 @@ declare(strict_types=1);
  */
 namespace Hyperf\Seata\Core\Context;
 
+use Hyperf\Context\Context;
 use Hyperf\Seata\Core\Model\BranchType;
 use Hyperf\Seata\Exception\IllegalArgumentException;
 use Hyperf\Seata\Logger\LoggerFactory;
 use Hyperf\Seata\Logger\LoggerInterface;
-use Hyperf\Utils\ApplicationContext;
-use Hyperf\Utils\Context;
+use Hyperf\Context\ApplicationContext;;
 use RuntimeException;
 
 class RootContext extends Context

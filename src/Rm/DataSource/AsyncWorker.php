@@ -20,12 +20,12 @@ declare(strict_types=1);
 namespace Hyperf\Rm\DataSource;
 
 use Hyperf\Contract\ConfigInterface;
+use Hyperf\Coroutine\Coroutine;
 use Hyperf\Engine\Channel;
 use Hyperf\Seata\Core\Model\BranchStatus;
 use Hyperf\Seata\Logger\LoggerFactory;
 use Hyperf\Seata\Logger\LoggerInterface;
 use Hyperf\Seata\Rm\DataSource\DataSourceManager;
-use Hyperf\Utils\Coroutine;
 use seata\src\Rm\DataSource\Phase2Context;
 
 class AsyncWorker

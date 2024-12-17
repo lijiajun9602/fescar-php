@@ -19,7 +19,7 @@ declare(strict_types=1);
  */
 namespace Hyperf\Seata\Rm\DataSource\Undo;
 
-use Hyperf\Utils\Contracts\Arrayable;
+use Hyperf\Contract\Arrayable;
 use JetBrains\PhpStorm\ArrayShape;
 use JetBrains\PhpStorm\Pure;
 

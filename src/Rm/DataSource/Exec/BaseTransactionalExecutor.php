@@ -53,8 +53,7 @@ abstract class BaseTransactionalExecutor implements Executor
         if (! empty($this->tableMeta)) {
             return $this->tableMeta;
         }
-        $tableMetaCache = TableMetaCacheFactory::getTableMetaCache($dbType);
-        return $tableMetaCache->getTableMeta($this->PDO, $this->parser->getTableName(), $this->parser->getResourceId());
+        return TableMetaCacheFactory::getTableMetaCache($dbType)->getTableMeta($this->PDO, $this->parser->getTableName(), $this->parser->getResourceId());
     }
 
 //    private StatementProxy $statementProxy;
